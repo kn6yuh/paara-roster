@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" type="image/png" href="/paara-roster/Icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAARA Member Roster Sync Manager</title>
+    <script>
+      (function() {
+        try {
+          var matchTheme = document.cookie.match(/(?:^|;\s*)paara_theme=([^;]*)/);
+          var theme = matchTheme ? decodeURIComponent(matchTheme[1]) : localStorage.getItem('paara_theme_pref');
+          if (theme === 'dark' || (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          }
+          var matchFont = document.cookie.match(/(?:^|;\s*)paara_font_size=([^;]*)/);
+          var fontSize = matchFont ? decodeURIComponent(matchFont[1]) : localStorage.getItem('paara_font_size_pref');
+          if (fontSize) {
+            var n = parseInt(fontSize, 10);
+            if (!isNaN(n) && n >= 80 && n <= 160) {
+              document.documentElement.style.fontSize = n + '%';
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="module" crossorigin src="/paara-roster/assets/index-BsPH596A.js"></script>
+    <link rel="stylesheet" crossorigin href="/paara-roster/assets/index-BHHvN0pr.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
